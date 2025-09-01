@@ -1,0 +1,183 @@
+/* Rounding corners like zen browser. */
+/* * {
+  border-radius: 8px !important;
+} */
+body toolbox#navigator-toolbox {
+  border: none !important;
+}
+
+tabbox#tabbrowser-tabbox,
+#tabbrowser-tabpanels {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 1px;
+}
+
+/* border radius in urlbar */
+#urlbar,
+#urlbar box,
+#urlbar hbox {
+  /*   height: 20px !important; */
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  /*   background-color: rgba(50,50,50, 0.2); */
+}
+
+#urlbar {
+  padding: 2px 4px !important;
+}
+
+#urlbar-background {
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Round the input container */
+#urlbar-input-container {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* Round the whole urlbar when focused */
+#urlbar:focus-within {
+  border-radius: 8px !important;
+  background-color: rgba(7, 7, 7) !important;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1) !important;
+  /* glow on focus */
+  /*   outline: none !important;
+  border: 0px !important; */
+}
+
+
+/* --- Hide Native Horizontal Tab Bar --- */
+/* Ensure the entire tab bar area is collapsed */
+#TabsToolbar {
+  visibility: collapse !important;
+  height: 0 !important;
+  /* Explicitly set height to 0 */
+  min-height: 0 !important;
+  /* Ensure minimum height is also 0 */
+  margin-bottom: 0 !important;
+  /* Remove any bottom margin */
+  overflow: hidden !important;
+  /* Hide any overflowing content */
+}
+
+/* Ensure the space for the tab bar is truly gone */
+#nav-bar {
+  margin-top: 0 !important;
+}
+
+/* --- Ensure Window Controls are Visible --- */
+/* Place window controls on the right of the navigation bar (where address bar is) */
+#main-window:not([sizemode="fullscreen"]) #titlebar {
+  -moz-appearance: none !important;
+  display: flex !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+#main-window:not([sizemode="fullscreen"]) .titlebar-buttonbox-container {
+  display: flex !important;
+  visibility: visible !important;
+  /*   margin: 0 !important;
+  padding: 0 !important; */
+  /*order: 100 !important;*/
+  /* Push buttons to the very right */
+  /*margin-left: auto !important;*/
+  /* Push buttons to the very right */
+}
+
+/* Adjust padding around the buttons if they appear too cramped */
+#main-window:not([sizemode="fullscreen"]) .titlebar-buttonbox {
+  padding-inline-start: 0px !important;
+  padding-inline-end: 0px !important;
+  /* padding-top: 5px !important; */
+  /* padding-bottom: 5px !important; */
+}
+
+/* Hide Sidebar Header */
+#sidebar-header {
+  display: none !important;
+}
+
+/* Decrease size of the sidebar header */
+#sidebar-header {
+  font-size: 1em !important;
+  padding: 2px 6px 2px 3px !important;
+  background-color: var(--lwt-sidebar-background-color, rgb(40, 40, 40)) !important;
+  /* OR use 'transparent' if Sidebery's background shows through */
+  /* background-color: transparent !important; */
+}
+
+#sidebar-header #sidebar-close {
+  padding: 3px !important;
+}
+
+#sidebar-header #sidebar-close .toolbarbutton-icon {
+  width: 14px !important;
+  height: 14px !important;
+  opacity: 0.6 !important;
+}
+
+
+
+/* this was causing error that sidebar was not able to hide */
+#sidebar-box {
+  /* display: flex !important; */
+  /* flex-direction: column !important;*/
+  /* Arrange children in a column */
+}
+
+/* Move sidebar header to the bottom */
+#sidebar-header {
+  order: 100 !important;
+  /* Push the header to the end (bottom) */
+  margin-top: auto !important;
+  /* Ensure it sticks to the bottom */
+  border-top: 1px solid rgba(100, 100, 100, 0.2) !important;
+  /* Optional: Add a separator line above it */
+}
+
+/* Ensure the sidebar content fills the remaining space */
+#sidebar-panel {
+  /* flex-grow: 1 !important; Allow the content to expand and fill available space */
+}
+
+
+
+/* Make the sidebar minimum width less */
+#sidebar-box {
+  min-width: 5px !important;
+  /* max-width: none !important; */
+}
+
+
+
+/* Reduce sidebar splitter width and remove all visual styling */
+splitter#sidebar-splitter.chromeclass-extrachrome.sidebar-splitter {
+  /* Set explicit width */
+  min-width: 2px !important;
+  max-width: 2px !important;
+  width: 2px !important;
+
+  /* Remove all borders */
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+
+  /* Make background transparent */
+  background-color: transparent !important;
+
+  /* Remove any padding/margin it might have */
+  padding: 0 !important;
+  margin: 0 !important;
+
+  /* Ensure it doesn't cast a shadow */
+  box-shadow: none !important;
+}

@@ -1,0 +1,82 @@
+#root.root {
+    --tabs-activated-bg: rgba(255, 255, 255, 0.15);
+}
+
+#root.root {
+    --frame-bg: #2D2D2D;
+}
+
+/* NAVBAR */
+
+#root.root {
+    --nav-btn-width: 25px;
+    --nav-btn-height: 25px;
+    --nav-btn-margin: 2px;
+}
+
+#root.root {
+    --toolbar-bg: transparent;
+}
+
+.NavigationBar .nav-item[data-type="tabs"][data-active="false"] .icon {
+    /*   fill: var(--nav-btn-fg); */
+    opacity: 50%;
+    scale: 0.75;
+}
+
+.top-horizontal-box {
+    display: flex;
+    /* 	make order below 1 or 5 to put nav bar on bottom */
+    order: 1;
+    /*margin-left: 5px;
+  margin-right: 5px;*/
+    /* 	border-bottom: 1px solid #40404090; */
+}
+
+#root.root {
+    --tabs-pinned-height: 35px;
+}
+
+#root.root {
+    --tabs-pinned-width: 40px;
+}
+
+/* .PinnedTabsBar {
+	display: flex;
+	justify-content: center;
+	gap: 1px;
+} */
+
+.PinnedTabsBar .tab-wrapper .body::before {
+    /* 	display: flex; */
+    /* 	justify-content: center; */
+    /* 	flex: 1 1 0; */
+    /* 	right: 0 !important; */
+    /* 	width: 100% !important; */
+}
+
+
+.PinnedTabsBar .tab-wrapper {
+    /* 	flex: 1 1 0; */
+    /* 	display: flex; */
+    /* 	justify-content: center; */
+    /* 	align-items: center; */
+
+    padding: 0;
+    border-radius: 6px;
+    background-color: rgba(80, 80, 80, 0.26);
+}
+
+.Tab[data-pin="true"][data-active="true"] .body {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.085);
+    border-radius: 6px;
+    /* display: flex;
+	flex: 1 1 100%; */
+}
+
+
+.PinnedTabsBar {
+    /*   margin-bottom: 1px; */
+    /* 	margin-top: 2px; */
+}
