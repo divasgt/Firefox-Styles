@@ -15,23 +15,25 @@ tabbox#tabbrowser-tabbox,
   padding-left: 1px;
 }
 
+
 /* border radius in urlbar */
 #urlbar,
 #urlbar box,
-#urlbar hbox {
-  /*   height: 20px !important; */
+#urlbar hbox,
+#urlbar-searchmode-switcher {
   border-radius: 8px !important;
   overflow: hidden !important;
-  /*   background-color: rgba(50,50,50, 0.2); */
+  /* background-color: rgba(50,50,50, 0.2); */
 }
 
-#urlbar {
-  padding: 2px 4px !important;
+#urlbar-container {
+  border: none !important;
+  outline: none !important;
 }
 
 #urlbar-background {
   border-radius: 8px !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.07) !important;
   transition: background-color 0.3s ease;
 }
 
@@ -41,15 +43,54 @@ tabbox#tabbrowser-tabbox,
   overflow: hidden !important;
 }
 
+#urlbar[breakout][breakout-extend]>#urlbar-background {
+  box-shadow: none !important;
+  /* animation: none !important; */
+  border: 2px solid rgba(255, 255, 255, 0.13) !important;
+}
+
 /* Round the whole urlbar when focused */
 #urlbar:focus-within {
   border-radius: 8px !important;
   background-color: rgba(7, 7, 7) !important;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1) !important;
-  /* glow on focus */
-  /*   outline: none !important;
-  border: 0px !important; */
+  box-shadow: 0px 0px 200px rgba(0, 0, 0, 1) !important;
+  /* big shadow on focus */
 }
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* 1. Set nav-bar height */
+#nav-bar {
+  height: 40px !important;
+}
+
+/* 2. Size and center the URL bar (“megabar”) */
+#urlbar[breakout],
+#urlbar[breakout][breakout-extend] {
+  --urlbar-height: 30px !important;
+  /* 40px nav bar – 2px top – 2px bottom */
+  --urlbar-toolbar-height: 38px !important;
+
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+}
+
+/* 3. Ensure input container matches new height */
+/* #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-inline: unset !important;
+  padding-block: unset !important;
+  transition: none !important;
+} */
+
+
+/* 5. Remove default focus outline */
+#urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background {
+  outline: none !important;
+  box-shadow: none !important;
+  /*   background-color: 3c3c3c !important; */
+}
+
 
 
 /* --- Hide Native Horizontal Tab Bar --- */
@@ -69,6 +110,9 @@ tabbox#tabbrowser-tabbox,
 /* Ensure the space for the tab bar is truly gone */
 #nav-bar {
   margin-top: 0 !important;
+  /* padding: 0 !important; */
+  /* space above title bar buttons also removed */
+  border: none !important;
 }
 
 /* --- Ensure Window Controls are Visible --- */
@@ -144,7 +188,8 @@ tabbox#tabbrowser-tabbox,
 
 /* Ensure the sidebar content fills the remaining space */
 #sidebar-panel {
-  /* flex-grow: 1 !important; Allow the content to expand and fill available space */
+  /* flex-grow: 1 !important; /* Allow the content to expand and fill available space */
+  */
 }
 
 
