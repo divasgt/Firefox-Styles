@@ -44,34 +44,40 @@ tabbox#tabbrowser-tabbox,
 }
 
 #urlbar[breakout][breakout-extend]>#urlbar-background {
-  box-shadow: none !important;
-  /* animation: none !important; */
-  border: 2px solid rgba(255, 255, 255, 0.13) !important;
+  /*   box-shadow: none !important; */
+  /*   animation: none !important; */
+  /*   border: 2px solid rgba(255,255,255, 0.13) !important; */
+  /* adding border 2px inside box */
+  border: none !important;
+  border-radius: 10px !important;
+  outline: 2px ridge rgba(255,255,255, 0.1);
+  outline-offset: -3px;
 }
 
 /* Round the whole urlbar when focused */
 #urlbar:focus-within {
-  border-radius: 8px !important;
   background-color: rgba(7, 7, 7) !important;
-  box-shadow: 0px 0px 200px rgba(0, 0, 0, 1) !important;
   /* big shadow on focus */
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 1) !important;
 }
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* 1. Set nav-bar height */
-#nav-bar {
+/* #nav-bar {
   height: 40px !important;
-}
+} */
 
 /* 2. Size and center the URL bar (“megabar”) */
-#urlbar[breakout],
-#urlbar[breakout][breakout-extend] {
-  --urlbar-height: 30px !important;
-  /* 40px nav bar – 2px top – 2px bottom */
-  --urlbar-toolbar-height: 38px !important;
 
-  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+#urlbar[breakout][breakout-extend] {
+  /*   --urlbar-height: 30px !important; */
+  /*   --urlbar-toolbar-height: 38px !important; */
+  border-radius: 10px !important;
+  /*   padding: 10px 10px !important; */
+  /*   top: 25% !important; */
+  /*   left: 50% !important; */
+  /*   transform: translate(-50%); */
 }
 
 /* 3. Ensure input container matches new height */
@@ -86,8 +92,8 @@ tabbox#tabbrowser-tabbox,
 
 /* 5. Remove default focus outline */
 #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background {
-  outline: none !important;
-  box-shadow: none !important;
+  /*   outline: none !important; */
+  /*   box-shadow: none !important; */
   /*   background-color: 3c3c3c !important; */
 }
 
@@ -188,8 +194,8 @@ tabbox#tabbrowser-tabbox,
 
 /* Ensure the sidebar content fills the remaining space */
 #sidebar-panel {
-  /* flex-grow: 1 !important; /* Allow the content to expand and fill available space */
-  */
+  /* Allow the content to expand and fill available space */
+  /* flex-grow: 1 !important; */
 }
 
 
