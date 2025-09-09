@@ -1,3 +1,3 @@
 ## Screenshot:
 
-![Screenshot](./screenshot.png)
+![Screenshot](./screenshot.png?raw=true)
